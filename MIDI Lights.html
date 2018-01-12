@@ -1,0 +1,48 @@
+<html>
+
+	<head>
+	</head>
+
+	<body>
+		<h1> <center> 
+			MIDI Controlled Lights
+		</h1> </center>
+	
+		<center> <img src = "Images/MIDI_Lights_folded.jpg" height = "300"> </center>
+		
+		<p>
+			The project is a box with a cable which attaches to four LED strips in white, red, blue, and green. The LED strips brightnesses are controllable by a computer using the MIDI protocol. There are also two knobs on the box which control a strobe light which is fed to each of the lights. The two knobs control how long the lights are on and off for which varies from ~1 second each to ~1/100th of a second. 
+		</p>
+			
+		<p>
+			The purpose of the project is to be able to create a custom lights show which is synchronized to music. The MIDI protocol is used for this as MIDI is commonly used to connect musical hardware to computers, and allows easy control of the lights  in many digital audio workstation software packages which support MIDI output such as Ableton Live.
+		</p>
+		
+		<p>
+			Most of the control is done via an atmega328p micro-controller programmed in Arduino C, receiving the MIDI data from a connected computer. The micro-controller receives the MIDI data from a standard MIDI jack, which is connected to a computer using a USB to MIDI cable. The computer sends data regarding each of the light's brightnesses to the controller which then sets the brightness via pulse width modulation (PWM). The strobe light is controlled by a 555 timer connected directly to two potentiometers which make up the knobs. Since both PWM and the strobe light are digital signals controlling the same light, the two are ANDed together using two transistors to control the single output. This allows for both the brightness and strobe light to be applied at the same time.
+		</p>
+	
+		<p>
+			The power is supplied via an external 12 volt DC plug and can be turned on and off with a switch on the top of the box. The 12 volts is stepped down to 5 volts by a buck regulator which supplies the 555 timer and micro-controller, while the full 12 volts is used to power the LED strips.   
+		</p>
+
+		<center> <img src = "Images/MIDI_Lights_ports.jpg" height = "200"> </center>
+	
+		<dl>
+			<dt> There are a number of different commands that can be sent: </dt>
+			<dd>
+			- A <i> note on </i> command sets a light to a certain brightness
+			</dd>
+			<dd>
+			- A <i> note off </i> command sets a light's brightness to zero
+			</dd>
+			<dd>
+			- A <i> BPM set </i> command tells the device how many "beats" there are in each minute. These beats are used as units of time for the <i> glide </i> command.	
+			</dd>
+			<dd>
+			- A <i> glide </i> command sets a starting brightness, an ending brightness, and the amount of time in "beats" between the start and the end of the glide. 
+			The light gets its brightness set to the starting brightness, then linearly decreases or increases to the ending brightness over the period of time specified.
+			</dd>
+		</dl>
+	<body>
+</html>
