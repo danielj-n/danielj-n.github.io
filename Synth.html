@@ -5,34 +5,10 @@
 	<body>
 		<center>
 				<h1> Synth </h1>
-				<i><h3> (a work in progress) </h3></i>
-				<img src = Images/Synth_Progress.jpg height = 300/> 
+				<i><h3> (Sept 2017 - Oct 2018) </h3></i>
+				<p> Pictures, code, and schematics coming in the next couple of days! </p>
 		</center>
 
-		
-		<h2> The plan </h2>
-		
-		<p>
-		The project is planned to be a 32-bit ARM micro-controller synthesizer, based on the <i>operator</i> synthesizer bundled with the digital audio workspace software <i>Ableton Live</i>.
-		
-		The synth is planned to have a 32-key keyboard (taken from a toy keyboard), 8 voices, 4 oscillators with configurable frequency offset, and 1 LFO, all digitally synthesized with the micro-controller. To contain the controls for all these peripherals, buttons and potentiometers are to be mounted on one custom designed PCB. A configurable analog low-pass filter, audio amplifier, 16-bit ADC, and the rest of the circuit is mounted on a second custom PCB so that the project can be broken up into steps. 	
-		</p>
-
-		<h2> Progress </h2>
-
-		<p>
-			The program for the synthesizer is fully written and tested in GNU C, however only about 3/4 of it has been ported to ARM C and tested to work on the micro-controller thus far. The completed work includes almost all initialization for every required peripheral on the micro-controller (PLL, SPI, interrupts, timers, pins), and everything needed to synthesize and output the digital wave data desired to the SPI bus.  	
-		</p>
-
-		<p>
-			The circuit is mostly incomplete, however the first board to host the buttons and potentiometers is completed in design and ready to be manufactured. The circuit actually built currently consists of an Arduino reading the SPI output from the ARM MCU through a simple logic level converter, the keyboard connected to the micro-controller to begin testing keyboard input, and the Atmel ICE programmer/debugger. 	
-		</p>
-
-		<p>
-			What is mainly missing and needs to be done next is to port the remainder of the C code which allows the MCU to be controller by external peripherals (such as the keyboard, buttons, and potentiometers), design the second board, test the whole device, and solder it all together.
-		</p>	
-	
-		
 		<h2> The Project </h2>	
 		
 		<p>
@@ -407,7 +383,7 @@
 
 		<p>
 
-		More updates to this project potentially coming soon!
+		Code, schematics, and pictures will be added in the next couple of days.
 
 		</p>
 		
