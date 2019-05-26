@@ -52,6 +52,23 @@
 			This lack of transmission line is thought to also be the reason for the bandpass filter's bad response into the GHz, although the exact reason for this remains unclear. This effect may still not be horrendous as the bandpass filter still provides some attenuation, the chip antenna's bandpass response itself should attenuate out of band signals (although the traces themselves may radiate), and the square wave signal contains less content at these higher frequencies, however it is far from truly optimal. The significance of this issue can be determined using an SDR once transmission has been achieved using the board.
 		</p>
 
+		<center>
+			<p>
+				Below is the setup with the filter cut off the board with some passive components and SMA connectors soldered on to it, connected to a spectrum analyzer to characterize the filter. 
+			</p>
+
+			<img src = "Images/RadIO_Tuning.jpg" height = "315"/>	
+		</center>
+
+		<center>
+			<p>
+				Below is the resulting spectrum readings after some fiddling around with components. At lower frequencies attenuation is fine, however at much higher frequencies attenuation starts decreasing significantly.
+			</p>
+
+			<img src = "Images/RadIO_Tuned_Partial_Spectrum.jpg" height = "315"/>	
+			<img src = "Images/RadIO_Tuned_Full_Spectrum.jpg" height = "315"/>	
+		</center>
+
 		<h3> Power Filtering </h3>
 
 		<p>
